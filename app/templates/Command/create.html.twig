@@ -1,0 +1,112 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('css/demand.css') }}"/>
+
+	<style>
+		.command__list-item {
+			display: flex;
+			justify-content: space-between;
+			width: 100%;
+			padding: 0.5em 20%;
+			align-items: center;
+			border-bottom: 1px solid var(--clr-neutral-dark);
+		}
+	</style>
+{% endblock %}
+
+{% block title %}
+	Nouvelle commande
+{% endblock %}
+
+{% block page_title %}
+	Nouvelle commande
+{% endblock %}
+
+{% block content %}
+	<div class="container-fluid">
+		<div class="mt-5 row justify-content-center">
+			<div class="col-4 d-flex flex-column justify-content-center align-items-center">
+				<ul class="command__list ps-card mb-3 w-100"></ul>
+
+				<div class="command__pricing ps-card flex-column align-items-center w-100">
+					<span class="mx-2" style="font-size: var(--fs-1); font-weight: var(--fw-1);">0</span>
+					FCFA
+
+					{% for leftBudget in leftBudgets %}
+						<div class="col">
+							<span id="cat-{{ leftBudget.category.id }}">{{ leftBudget.category }}</span>:
+							<span id="amt-{{ leftBudget.category.id }}">{{ leftBudget.amount }}</span>
+							FCFA restants
+						</div>
+					{% endfor %}
+				</div>
+
+
+				<button class="command__btn ps-btn ps-btn-primary mt-4 w-100 ps-btn-disabled">Commander</button>
+			</div>
+		</div>
+
+		<div class="row mt-5">
+			<div class="col-12">
+				<input type="search" class="catalog__search ps-form-input ps-form-input-bg-light ps-form-input-border-round px-3 w-100" id="search_bar" placeholder="Rechercher dans les articles">
+				<div></div>
+
+				<div class="row catalog__grid mt-3">
+					{% for article in articles %}
+						<div class="col-12 col-md-4">
+							<div class="card">
+								<div class="card-body">
+									<h5 class="card-title" data-category="{{ article.category.id }}">{{ article.name }}</h5>
+									<h6>{{ article.price }}
+										FCFA</h6>
+									<button href="#" class="ps-btn ps-btn-circ ps-btn-primary btn-add">+</button>
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+
+			{# <div class="container-fluid">
+									      <div class="row">
+									        <ul class="command__list card">
+									        </ul>
+									        <div class="command__pricing card--bordered card--centered">
+									            <span class="pricing__cost">0</span> FCFA
+									        </div>
+									
+									        <button class="command__btn btn btn--long">Suivant</button>
+									      </div>
+									
+									      <div class="row">
+									        <div class="row">
+									          <input type="search" class="col catalog__search" id="search_bar">
+									        </div>
+									        
+									        <div class="row catalog__grid gy-3">
+									              {% for article in articles %}
+									              <div class="col-12 col-md-4">
+									                <div class="card">
+									                  <div class="card-body">
+									                    <h5 class="card-title">{{ article.name }}</h5>
+									                    <h6>{{ article.price }} FCFA</h6>
+									                    <button href="#" class="ps-btn ps-btn-circ ps-btn-primary btn-add">+</button>
+									                  </div>
+									                </div>
+									              </div>
+									              {% endfor %}
+									        </div>
+									
+									      </div>
+									    </div> #}
+		{% endblock %}
+
+		{% block javascripts %}
+			<script src="{{ asset('js/command.js') }}"></script>
+			<script src="{{ asset('js/live_search.js') }}"></script>
+
+			<script>
+				localStorage.setItem("token", "{{ csrf_token("authenticate") }}");
+			</script>
+		{% endblock %}

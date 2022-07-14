@@ -1,0 +1,89 @@
+{% extends "master.html.twig" %}
+
+{% block body %}
+<body class="ps-grid-layout">
+  <header class="header">
+      <nav class="navbar navbar-light bg-light px-5">
+        <a class="navbar-brand" href="{{ path('app_home') }}">
+          <img
+            src="{{ asset('/images/logo-pad.svg') }}"
+            width="40"
+            height="40"
+            alt=""
+          />
+        </a>
+
+        <div class="d-flex align-items-center">
+          {% if app.user %}
+            <button type="menu" class="ps-btn-menu mx-5">
+              <i class="fa-regular fa-bell"></i>
+            </button>
+
+            <a href="#" class="ps-btn-menu">{{ app.user.firstName }}</i></a>
+
+            {% if 'ROLE_ADMIN' in app.user.roles %}
+              <a href="{{ path('admin') }}" class="ps-btn-menu mx-5">Admin</i></a>
+            {% endif %}
+
+            <a href="{{ path('app_logout') }}" class="ps-btn-menu mx-5">Déconnexion</a>
+          {% else %}
+            <a href="{{ path('app_login') }}" class="ps-btn-menu">Connexion</a>
+          {% endif %}
+        </div>
+      </nav>
+  </header>
+
+  <main class="main">
+    <h1 class="ps-page-title">{% block page_title %} {% endblock %}</h1>
+
+    {% block content %} {% endblock %}
+  </main>
+
+  <aside class="sidebar d-md-flex flex-column align-items-center">
+      <header class="px-4 py-2">
+        <img
+          src="{{ asset('images/logo-store.svg') }}"
+          alt="Logo de l'application PAD Store"
+          class="sidebar__logo"
+        />
+      </header>
+
+      <hr class="sidebar__divider w-100" />
+
+      <ul class="sidebar__menu px-4">
+        <li class="sidebar__menu-item">
+          <a href="{{ path('app_articles') }}" class="sidebar__link">
+            <i class="fa-solid fa-eye mx-1"></i>
+            Stock
+          </a>
+        </li>
+
+        <li class="sidebar__menu-item">
+            <a href="{{ path('app_command_create') }}" class="sidebar__link">
+              <i class="fa-solid fa-plus mx-1"></i>
+              Commander
+            </a>
+          </li>
+          <li class="sidebar__menu-item">
+            <a href="#" class="sidebar__link">
+              <i class="fa-solid fa-book mx-1"></i>
+              Historique
+            </a>
+          </li>
+          <li class="sidebar__menu-item">
+            <a href="#" class="sidebar__link">
+              <i class="fa-solid fa-user mx-1"></i>
+              Mon compte
+            </a>
+          </li>
+      </ul>
+  </aside>
+
+  <script
+			  src="https://code.jquery.com/jquery-3.6.0.min.js"
+			  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+			  crossorigin="anonymous">
+  </script>  
+  {% block javascripts %} {% endblock %}
+</body>
+{% endblock %}

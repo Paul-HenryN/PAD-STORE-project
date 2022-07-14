@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<!-- Login page -->
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="../assets/images/favicon.svg"
+      type="image/x-icon"
+    />
+    <!-- / Favicon -->
+
+    <!-- Vendor -->
+    <link
+      rel="stylesheet"
+      href="../assets/vendor/bootstrap/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link
+      rel="stylesheet"
+      href="../assets/vendor/fontawesome/css/all.min.css"
+    />
+    <!-- / Vendor -->
+
+    <!-- Custom stylesheets -->
+    <link rel="stylesheet" href="./css/components.css" />
+    <link rel="stylesheet" href="./css/login.css" />
+    <!-- / Custom stylesheets -->
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- / Google fonts -->
+
+    <title>PAD STORE | Connexion</title>
+  </head>
+
+  <body>
+    <main>
+      <form method="post" class="form ps-card">
+        <img
+          src="../assets/images/logo-pad.svg"
+          alt="Logo du Port Autonome de Douala"
+          class="logo"
+        />
+        <h1>Connexion</h1>
+
+        <div class="form__credentials">
+          <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="Nom d'utilisateur"
+            class="ps-form-input"
+          />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Mot de passe"
+            class="ps-form-input"
+          />
+        </div>
+
+        <button type="submit" class="ps-btn ps-btn-w-100 ps-btn-primary">
+          Valider
+        </button>
+      </form>
+    </main>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>

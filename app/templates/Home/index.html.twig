@@ -1,0 +1,108 @@
+{% extends "base.html.twig" %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/home.css') }}" />
+
+    <style>
+      .ps-list {
+        width: 100%;
+        color: var(--clr-neutral-dark);
+      }
+      .ps-list a{
+        padding: 0.3em;
+        display: block;
+      }
+
+      .ps-list h3{
+        color: var(--clr-neutral-dark);
+      }
+
+      .ps-list-striped > a:nth-child(odd){
+        background-color: #d3d3d3;
+      }
+      .ps-list-striped > a:nth-child(odd):hover{
+        background-color: #adadad;
+      }
+
+      .ps-list-striped > a:nth-child(even){
+        background-color: #f1f1f1;
+      }
+      .ps-list-striped > a:nth-child(even):hover{
+        background-color: #c7c7c7;
+      }
+    </style>
+{% endblock %}
+
+{% block title %} Tableau de bord {% endblock %}
+
+{% block page_title %} Tableau de bord {% endblock %}
+
+{% block content %}
+      <div class="container-fluid p-4">
+        <div class="row gx-3 gy-5 px-0">
+          <div class="col-12 col-lg-6">
+            <h2 class="ps-card mb-4 align-items-start d-inline-block w-100">
+              <i class="fa-solid fa-clock mx-2"></i>
+              Vos dernières commandes
+            </h2>
+
+            <div class="ps-card align-items-start py-4 px-2">
+              <ul class="ps-list ps-list-striped">
+              {% for command in commands %}
+                <a href="{{path('app_command_print', {'id': command.id}) }}">
+                  <li class="mx-3 py-3 px-2">
+                    <h3>Commandé le <time datetime="{{ command.date | date('d-m-y') }}">{{ command.date | date('d-m-y h:i:s') }}</time></h3>
+                    <ul class="mx-5 ps-list" style="list-style: circle;">
+                      {% for article in command.articles %}
+                        <li>{{ article.name }}</li>
+                      {% endfor %}
+                    </ul>
+                  </li>
+                </a>
+              {% endfor %}
+              </ul>
+              <a href="{{ path('app_command_create') }}" class="ps-btn ps-btn-primary mt-3 align-self-center">Nouvelle demande</a>
+            </div>
+          </div>
+
+          <div class="col">
+            <h2 class="ps-card mb-4 align-items-start d-inline-block w-100">
+              <i class="fa-solid fa-money-bill mx-2"></i>
+              Budget
+            </h2>
+
+            {% for leftBudget in leftBudgets %}
+              <div class="ps-card mb-2 align-items-start">
+                    <h3>
+                      {{ leftBudget.category.name }}
+                    </h3>
+
+                    <hr />
+
+                    <span style="font-size: var(--fs-1); font-weight: var(--fw-3);">{{ leftBudget.amount }}</span> FCFA
+              </div>
+            {% endfor %}
+          </div>
+
+          <div class="ps-card col-12 flex-row align-items-center justify-content-between">
+            <h2>Disponible dans le magasin</h2>
+
+            <a href="{{ path('app_articles') }}" class="ps-btn ps-btn-primary">Voir</a>
+          </div>
+
+          <div class="container-fluid px-0">
+            <div class="row gy-2">
+              {% for article in articles %}
+                <div class="col-12 col-md-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ article.name }}</h5>
+                      <p>Description de l'article</p>
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+{% endblock %}

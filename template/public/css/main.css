@@ -1,0 +1,167 @@
+/**
+    PAD STORE: main.css
+    Main Stylesheet
+*/
+
+/**
+      CUSTOM PROPERTIES: start
+  */
+:root {
+  /* Colors */
+  --clr-primary: #0a77a1;
+  --clr-accent: #200a6e;
+  --clr-danger: rgb(223, 45, 45);
+  --clr-neutral-light: #ffffff;
+  --clr-neutral-dark: #252525;
+  --clr-neutral-mid: #d9d9d9;
+  --clr-neutral-mid-dark: #b6b6b6;
+
+  /* Typography */
+  --ff: "Quicksand", sans-serif;
+
+  --fs-1: 1.7rem;
+  --fs-2: 1rem;
+  --fs-3: 1rem;
+  --fs-neutral: 0.9rem;
+  --fs-small: 0.5rem;
+
+  --fw-1: 500;
+  --fw-2: 700;
+  --fw-3: 600;
+  --fw-neutral: 400;
+}
+/**
+      CUSTOM PROPERTIES: end
+  */
+
+/**
+      RESETS: start
+  */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/**
+      RESETS: end
+  */
+
+/**
+      BASE STYLES: start
+  */
+body {
+  background-color: var(--clr-neutral-mid);
+  font-family: var(--ff);
+  font-size: var(--fs-neutral);
+  font-weight: var(--fw-neutral);
+  color: var(--clr-neutral-dark);
+}
+
+h1 {
+  font-size: var(--fs-1);
+  font-weight: var(--fw-1);
+}
+h2 {
+  font-size: var(--fs-2);
+  font-weight: var(--fw-2);
+}
+h3 {
+  font-size: var(--fs-3);
+  font-weight: var(--fw-3);
+}
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: var(--clr-neutral-light);
+}
+
+hr{
+  border: 1px solid var(--clr-neutral-dark);
+  width: 100%;
+}
+
+/**
+      BASE STYLES: end
+  */

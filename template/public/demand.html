@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<!-- Login page -->
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="../assets/images/favicon.svg"
+      type="image/x-icon"
+    />
+    <!-- / Favicon -->
+
+    <!-- Vendor -->
+    <link
+      rel="stylesheet"
+      href="../assets/vendor/bootstrap/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link
+      rel="stylesheet"
+      href="../assets/vendor/fontawesome/css/all.min.css"
+    />
+    <!-- / Vendor -->
+
+    <!-- Custom stylesheets -->
+    <link rel="stylesheet" href="./css/components.css" />
+    <link rel="stylesheet" href="./css/demand.css" />
+    <!-- / Custom stylesheets -->
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- / Google fonts -->
+
+    <title>PAD STORE | Nouvelle demande</title>
+  </head>
+
+  <body class="ps-grid-layout">
+    <header class="header">
+      <nav class="navbar navbar-light bg-light px-5">
+        <a class="navbar-brand" href="#">
+          <img
+            src="../assets/images/logo-pad.svg"
+            width="40"
+            height="40"
+            alt=""
+          />
+        </a>
+
+        <div class="d-flex">
+          <!-- <button type="menu" class="ps-btn-menu mx-5">
+            <i class="fa-regular fa-bell"></i>
+          </button>
+          <a href="#" class="ps-btn-menu"><i class="fa-regular fa-user"></i></a> -->
+          <a href="./login.html" class="ps-btn-menu">Connexion</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main">
+      <h1 class="ps-page-title">Nouvelle demande</h1>
+
+      <div class="container p-5">
+        <form class="form p-5 card">
+            <div class="row mb-4">18.000 FCFA restants</div>
+          <div class="row mb-5 justify-content-between">
+            <select name="article-name" id="article-name" class="ps-form-input col-8">
+              <option value="#">Article</option>
+              <option value="#">Article</option>
+              <option value="#">Article</option>
+              <option value="#">Article</option>
+              <option value="#">Article</option>
+              <option value="#">Article</option>
+              <option value="#">Article</option>
+              <option value="#">Article</option>
+            </select>
+
+            <input type="number" name="article-count" id="article-count" class="ps-form-input col-3" value="1" min="1">
+
+            <button type="button" class="ps-btn ps-btn-round ps-btn-delete col-1">-</button>
+          </div>
+
+          <div class="row mb-5 justify-content-between">
+            <select name="article-name" id="article-name" class="ps-form-input col-8">
+              <option value="#">Article</option>
+              <option value="#">Article</option>
+              <option value="#">Article</option>
+              <option value="#">Article</option>
+              <option value="#">Article</option>
+              <option value="#">Article</option>
+              <option value="#">Article</option>
+              <option value="#">Article</option>
+            </select>
+
+            <input type="number" name="article-count" id="article-count" class="ps-form-input col-3" value="1" min="1">
+
+            <button type="button" class="ps-btn ps-btn-round ps-btn-delete col-1">-</button>
+          </div>
+
+          <div class="row mb-5">
+            <button type="button" class="ps-btn ps-btn-round ps-btn-secondary">+</button>
+          </div>
+
+          <div class="row justify-content-end">
+            <button type="submit" class="col-4 ps-btn ps-btn-primary">Suivant</button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <aside class="sidebar d-flex flex-column align-items-center">
+      <header class="px-4 py-2">
+        <img
+          src="../assets/images/logo-store.svg"
+          alt="Logo de l'application PAD Store"
+          class="sidebar__logo"
+        />
+      </header>
+
+      <hr class="sidebar__divider w-100" />
+
+      <ul class="sidebar__menu px-4">
+        <li class="sidebar__menu-item">
+          <a href="#" class="sidebar__link">Stock</a>
+        </li>
+        <li class="sidebar__menu-item">
+          <a href="#" class="sidebar__link">Commander</a>
+        </li>
+        <li class="sidebar__menu-item">
+          <a href="#" class="sidebar__link">Historique</a>
+        </li>
+        <li class="sidebar__menu-item">
+          <a href="#" class="sidebar__link">Mon compte</a>
+        </li>
+      </ul>
+    </aside>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>

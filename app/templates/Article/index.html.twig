@@ -1,0 +1,35 @@
+{% extends "base.html.twig" %}
+
+{% block title %} Stock {% endblock %}
+
+
+{% block page_title %} Disponibles en stock {% endblock %}
+
+{% block content %}
+    <div class="container-fluid mt-5">
+      <div class="catalog">
+        <div class="row justify-content-center">
+          <input type="search" class="col-6 catalog__search ps-form-input ps-form-input-bg-light ps-form-input-border-round px-3" id="search_bar" placeholder="Rechercher dans les articles">
+        </div>
+        
+        <div class="row mt-3 px-3 catalog__grid gy-3">
+            {% for article in articles %}
+              <div class="col-12 col-md-4">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ article.name }}</h5>
+                    <p>Description de l'article</p>
+                    <h6>{{ article.price }} FCFA</h6>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+        </div>
+
+      </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+  <script src="{{ asset('js/live_search.js') }}"></script>
+{% endblock %}

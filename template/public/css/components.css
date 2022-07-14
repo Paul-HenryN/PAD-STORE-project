@@ -1,0 +1,141 @@
+/**
+    PAD STORE: components.css
+    Reusable Components
+*/
+
+/* Card */
+.ps-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column nowrap;
+    background-color: var(--clr-neutral-light);
+    border-radius: 0.2rem;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.25);
+    padding: 1em;
+}
+
+/* Form input */
+.ps-form-input {
+    border: none;
+    background-color: var(--clr-neutral-mid);
+    padding: 0.5em;
+    border-radius: 0.2rem;
+}
+
+/* Buttons */
+.ps-btn,
+.ps-btn:link,
+.ps-btn:visited
+.ps-btn:hover,
+.ps-btn:focus,
+.ps-btn:active {
+    border: none;
+    border-radius: 5rem;
+    padding: 0.5em 1em;
+    text-decoration: none;
+}
+.ps-btn-w-100 {
+    width: 100%;
+}
+.ps-btn-round {
+    width: 40px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+.ps-btn-primary,
+.ps-btn-primary:link,
+.ps-btn-primary:visited
+.ps-btn-primary:hover,
+.ps-btn-primary:focus,
+.ps-btn-primary:active {
+    background-color: var(--clr-primary);
+    color: var(--clr-neutral-light);
+    font-weight: var(--fw-2);
+}
+
+.ps-btn-secondary,
+.ps-btn-secondary:link,
+.ps-btn-secondary:visited
+.ps-btn-secondary:hover,
+.ps-btn-secondary:focus,
+.ps-btn-secondary:active {
+    background-color: var(--clr-accent);
+    color: var(--clr-neutral-light);
+    font-weight: var(--fw-2);
+}
+
+.ps-btn-delete,
+.ps-btn-delete:link,
+.ps-btn-delete:visited
+.ps-btn-delete:hover,
+.ps-btn-delete:focus,
+.ps-btn-delete:active {
+    background-color: var(--clr-danger);
+    color: var(--clr-neutral-light);
+    font-weight: var(--fw-2);
+}
+
+.ps-btn-menu,
+.ps-btn-menu:link,
+.ps-btn-menu:visited,
+.ps-btn-menu:hover,
+.ps-btn-menu:focus,
+.ps-btn-menu:active{
+    background: none;
+    border: none;
+    padding: none;
+    color: var(--clr-neutral-dark);
+}
+
+/* Page title */
+.ps-page-title {
+    background-color: var(--clr-neutral-mid-dark);
+    padding: 1em 2.5em;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: var(--clr-primary);
+    grid-area: side;
+}
+.sidebar__divider {
+    color: var(--clr-neutral-light)
+}
+.sidebar__menu {
+    display: flex;
+    flex-flow: column nowrap;
+    row-gap: 1em;
+}
+.sidebar__menu-item {
+    width: 100%;
+    border-bottom: 1px solid var(--clr-neutral-light);
+    padding: 0.8em 0.2em;
+}
+.sidebar__link {
+    display: block;
+    font-size: var(--fs-3);
+    font-weight: var(--fw-2);
+}
+
+/*navbar*/
+
+/* Grid Layout */
+.header {
+    grid-area: top;
+}
+
+.main {
+    grid-area: center;
+}
+
+.ps-grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    grid-template-rows:  1fr 8fr;
+
+    grid-template-areas: 
+    "side top"
+    "side center";
+}
+

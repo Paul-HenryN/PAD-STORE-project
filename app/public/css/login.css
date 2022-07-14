@@ -1,0 +1,28 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+    row-gap: 1.5rem;
+    position: relative;
+    padding-inline: 1.5rem;
+    padding-block: 3rem 5rem;
+}
+
+.form__credentials {
+    display: flex;
+    flex-flow: column nowrap;
+    row-gap: 1rem;
+}
+
+.logo {
+    max-width: 35%;
+    position: absolute;
+    top: -25%;
+}
+
+input {
+    width: 15rem;
+}

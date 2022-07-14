@@ -1,0 +1,42 @@
+- Procédures
+	+ Acteurs du système de maintenance informatique
+
+- Existant
+	+ Qu'est-ce qui est fait ?
+
+- Départements
+	+ Génie logiciel
+	+ Télécom 
+	+ Infrastructure (Maintenancier, ...)
+
+- Cahier de charges du projet
+
+- La maitenance préventive (cours pour les non-initiés)
+	+ Définition
+	+ Utilité
+	+ Enjeux 
+
+- La conception 
+
+- Configurations, justificatifs d'implémentation et de test
+
+- Manuel utilisateur
+
+- Manuel acteurs
+
+----------------------------------------------------------------------
+NOTES ANNEXES PROJET
+----------------------------------------------------------------------
+
+Objectifs
+	+ Automatiser la production de rapports de maintenance
+		* Technicien opérant
+		* Données sauvegardées
+		* Type de sauvegarde
+		* Date
+
+	+ Gérer le cycle de vie des équipements
+		* Historique des maintenances
+		* Prévision des maintenances préventives
+
+
